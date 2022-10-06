@@ -1,4 +1,4 @@
-def demander_entier(message : str) -> int :
+def demander_entier_V2(message : str) -> int :
     """ ==================================================================================================================
     
         * Description : 
