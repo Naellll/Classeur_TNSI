@@ -57,19 +57,19 @@ def creation_tours(n):
 
 # Fonctions avec les listes Python :
 
-def creer_pile():
+def creer_pile_liste():
     '''Renvoie une pile vide'''
     return []
 
-def est_vide(pile):
+def est_vide_liste(pile):
     '''Renvoie un booléen, True si la pile est vide et False sinon'''
     return p == []
 
-def empiler(pile, element):
+def empiler_liste(pile, element):
     '''Empile element au sommet de pile'''
     pile.append(element)
     
-def depiler(pile):
+def depiler_liste(pile):
     '''Renvoie et enlève la valeur du sommet de pile'''
     assert not est_vide(pile), "Pile vide"
     return pile.pop()
