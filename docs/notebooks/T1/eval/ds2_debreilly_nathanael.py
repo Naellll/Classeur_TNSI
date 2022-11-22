@@ -53,6 +53,28 @@ def creation_tours(n):
 
 
 
+def deplacer(self, origine, cible):
+    '''
+    déplace la valeur au sommet de la pile d’indice origine vers le sommet de la pile d’indice cible.
+    Si le déplacement n’est pas possible, parce qu’il ne respecte pas les règles du jeu, les piles ne sont pas modifiées.
+    '''
+    if self[cible].est_vide() and not self[origine].est_vide():
+        self[cible].empiler(self[origine].depiler())
+    elif sommet(self[origine]) < sommet(self[cible]) and not self[origine].est_vide():
+        self[cible].empiler(self[origine].depiler())
+
+
+
+def resoudre(self, n, origine, cible, interm):
+    if n == 0:
+        return None
+    else:
+        resoudre(self, n-1, origine, interm, cible)
+        deplacer(self, origine, cible)
+        resoudre(self, n-1, interm, cible, origine)
+
+
+
 
 
 # Fonctions avec les listes Python :
@@ -101,3 +123,12 @@ def creation_tours_liste(n):
     p2 = creer_pile()
     mettre_disques_liste(p0, n)
     return [p0, p1, p2]
+
+
+
+
+
+# Bonus :
+
+def nb_etapes(n):
+    return 2**n - 1
