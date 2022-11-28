@@ -85,7 +85,7 @@ def creer_pile_liste():
 
 def est_vide_liste(pile):
     '''Renvoie un booléen, True si la pile est vide et False sinon'''
-    return p == []
+    return pile == []
 
 def empiler_liste(pile, element):
     '''Empile element au sommet de pile'''
