@@ -108,7 +108,7 @@ def sommet_liste(pile):
 def mettre_disques_liste(pile, n):
     '''met des disques de taille n à 1 sur la pile'''
     for i in range(n, 0, -1):
-        empiler(pile, n)
+        empiler_liste(pile, n)
         n -= 1
     return pile
 
