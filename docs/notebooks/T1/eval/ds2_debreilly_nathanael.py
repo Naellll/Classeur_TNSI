@@ -126,6 +126,28 @@ def creation_tours_liste(n):
 
 
 
+def deplacer_liste(tours, origine, cible):
+    '''
+    déplace la valeur au sommet de la pile d’indice origine vers le sommet de la pile d’indice cible.
+    Si le déplacement n’est pas possible, parce qu’il ne respecte pas les règles du jeu, les piles ne sont pas modifiées.
+    '''
+    if est_vide_liste(tours[cible]) and not est_vide_liste(tours[origine]):
+        empiler_liste(tours[cible], depiler_liste(tours[origine]))
+    elif sommet_liste(tours[origine]) < sommet_liste(tours[cible]) and not est_vide_liste(tours[origine]):
+        empiler_liste(tours[cible], depiler_liste(tours[origine]))
+
+
+
+def resoudre_liste(tours, n, origine, cible, interm):
+    if n == 0:
+        return None
+    else:
+        resoudre_liste(tours, n-1, origine, interm, cible)
+        deplacer_liste(tours, origine, cible)
+        resoudre_liste(tours, n-1, interm, cible, origine)
+
+
+
 
 
 # Bonus :
