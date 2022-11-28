@@ -118,9 +118,9 @@ def creation_tours_liste(n):
     ''' renvoie une liste de 3 piles,
     la première correspond à la pile des n disques,
     les autres étant vides.'''
-    p0 = creer_pile_liste()()
-    p1 = creer_pile_liste()()
-    p2 = creer_pile_liste()()
+    p0 = creer_pile_liste()
+    p1 = creer_pile_liste()
+    p2 = creer_pile_liste()
     mettre_disques_liste(p0, n)
     return [p0, p1, p2]
 
