@@ -93,14 +93,14 @@ def empiler_liste(pile, element):
     
 def depiler_liste(pile):
     '''Renvoie et enlève la valeur du sommet de pile'''
-    assert not est_vide(pile), "Pile vide"
+    assert not est_vide_liste(pile), "Pile vide"
     return pile.pop()
 
 
 
 def sommet_liste(pile):
     ''' Renvoie la valeur au sommet de la pile mais sans la supprimer de la pile '''
-    assert not est_vide(pile), "La pile est vide"
+    assert not est_vide_liste(pile), "La pile est vide"
     return pile[-1]
 
 
