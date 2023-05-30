@@ -6,34 +6,19 @@ class Jeu:
         
         pyxel.init(320, 240, title="np")
 
-<<<<<<< HEAD
         self.souris_X = 
 
         self.vitesse_creation_ennemis = 20
         self.vitesse_tir = 10
         self.degat = 1
-=======
-        self.vitesse_creation_ennemis = 50
-        self.vitesse_tir = 10
-        self.max_munition = 8
-        self.munition = 8
-        self.vide = False
-        self.vitesse_recharge = 10
-        self.degat = 0
-        self.degat_souris = 3
->>>>>>> 7c6a34f194e2c3041288d3ec6b4bf2e9fca37868
         self.vitesse_ennemi = 1
         self.ennemi_selection = False
         self.ennemi_select = None
         self.liste_ennemi = []
-<<<<<<< HEAD
-
-=======
         self.coin = 0
         self.menu = False
 
         pyxel.mouse(visible = True)
->>>>>>> 7c6a34f194e2c3041288d3ec6b4bf2e9fca37868
         pyxel.load("npedit.pyxres")
         pyxel.run(self.update, self.draw)
 
@@ -41,11 +26,7 @@ class Jeu:
     def creation_ennemi(self):
         # création des ennemis avec une liste X, Y, et TYPE
         if (pyxel.frame_count % self.vitesse_creation_ennemis == 0):
-<<<<<<< HEAD
-            self.liste_ennemi.append({"id": (pyxel.frame_count-(pyxel.frame_count//10000)*10000),"X": -5, "Y": pyxel.rndi(0, 240),"vie": 5, "type": 0})
-=======
             self.liste_ennemi.append({"id": (pyxel.frame_count-(pyxel.frame_count//10000)*10000),"X": -5, "Y": pyxel.rndi(40, 235),"vie": 5, "type": 0})
->>>>>>> 7c6a34f194e2c3041288d3ec6b4bf2e9fca37868
 
     def deplacement_ennemi(self):
         # permet le déplacement vers la droite des ennemis avec X += self.vitesse_ennemi
@@ -75,8 +56,6 @@ class Jeu:
                     if ennemi["id"] == self.ennemi_select:
                         ennemi["vie"] -= self.degat
 
-<<<<<<< HEAD
-=======
     def toucher_ennemi(self):
         if not self.vide:
             if pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT):
@@ -94,21 +73,11 @@ class Jeu:
             self.vide = False
 
 
->>>>>>> 7c6a34f194e2c3041288d3ec6b4bf2e9fca37868
     def ennemi_mort(self):
         for ennemi in self.liste_ennemi:
             if ennemi["vie"] <= 0:
                 self.liste_ennemi.remove(ennemi)
                 self.ennemi_selection = False
-<<<<<<< HEAD
-
-
-    def update(self):
-        self.creation_ennemi()
-        self.deplacement_ennemi()
-        self.viser_ennemi_front()
-        self.ennemi_mort()
-=======
                 self.coin += 5
 
     def ouvrir_menu(self):
@@ -129,7 +98,6 @@ class Jeu:
             self.viser_ennemi_front()
             self.toucher_ennemi()
             self.ennemi_mort()
->>>>>>> 7c6a34f194e2c3041288d3ec6b4bf2e9fca37868
     
 
 
@@ -142,10 +110,6 @@ class Jeu:
             pyxel.rect(ennemi["X"]-5, ennemi["Y"]-10, 2*5, 3, 8)
             pyxel.rect(ennemi["X"]-5, ennemi["Y"]-10, 2*ennemi["vie"], 3, 11)
 
-<<<<<<< HEAD
-        pyxel.blt(160, 10, 0, 0, 16, 16, 8, 0)
-
-=======
         pyxel.rect(130, 5, 60, 15, 4)
         pyxel.text(145, 10, "Upgrades", 10)
 
@@ -169,6 +133,5 @@ class Jeu:
             pyxel.rect(60, 40, 200, 150, 4)
             pyxel.rect(245, 45, 10, 10, 8)
             pyxel.text(249, 48, "X", 7)
->>>>>>> 7c6a34f194e2c3041288d3ec6b4bf2e9fca37868
 
 Jeu()
